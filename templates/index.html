@@ -374,58 +374,13 @@ tr:last-child td{border-bottom:none;}
 <div id="tab-charts" class="panel">
   <div class="empty" id="noCharts"><div class="empty-ico"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="empty-t">No Charts Yet</div><div style="font-size:13px;">Upload a CSV file to generate charts.</div></div>
   <div id="chartsGrid" style="display:none;">
-
     <!-- KPI Row -->
     <div class="kpi-grid" id="kpiRow"></div>
 
-    <!-- Branch Charts -->
-    <div class="g2e" style="margin-bottom:16px;" id="branchSection">
-      <div class="chart-card">
-        <div class="chart-head"><div class="card-ic ic-p"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><span class="chart-title" id="brRevTitle">Revenue by Branch</span></div>
-        <div class="chart-body"><div style="height:240px;position:relative;"><canvas id="brRevChart"></canvas></div></div>
-      </div>
-      <div class="chart-card">
-        <div class="chart-head"><div class="card-ic ic-t"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0110 10"/></svg></div><span class="chart-title" id="brDealTitle">Deals by Branch</span></div>
-        <div class="chart-body"><div style="height:240px;position:relative;"><canvas id="brDealChart"></canvas></div></div>
-      </div>
+    <!-- Dynamic Charts Container -->
+    <div id="dynamicChartsGrid" class="g2e" style="margin-bottom:16px;">
+        <!-- Charts will be injected here dynamically -->
     </div>
-
-    <!-- Employee Charts -->
-    <div class="g2e" style="margin-bottom:16px;" id="empSection">
-      <div class="chart-card">
-        <div class="chart-head"><div class="card-ic ic-k"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><span class="chart-title" id="empRevTitle">Revenue by Employee</span></div>
-        <div class="chart-body"><div style="height:240px;position:relative;"><canvas id="empRevChart"></canvas></div></div>
-      </div>
-      <div class="chart-card">
-        <div class="chart-head"><div class="card-ic ic-y"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><span class="chart-title" id="empDealTitle">Deals by Employee</span></div>
-        <div class="chart-body"><div style="height:240px;position:relative;"><canvas id="empDealChart"></canvas></div></div>
-      </div>
-    </div>
-
-    <!-- Monthly Trend + Status -->
-    <div class="g2e" style="margin-bottom:16px;">
-      <div class="chart-card">
-        <div class="chart-head"><div class="card-ic ic-a"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><span class="chart-title">Monthly Revenue Trend</span></div>
-        <div class="chart-body"><div style="height:240px;position:relative;"><canvas id="trendChart"></canvas></div></div>
-      </div>
-      <div class="chart-card">
-        <div class="chart-head"><div class="card-ic ic-g"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0110 10"/></svg></div><span class="chart-title">Deal Status</span></div>
-        <div class="chart-body"><div style="height:240px;position:relative;"><canvas id="statusChart"></canvas></div></div>
-      </div>
-    </div>
-
-    <!-- Scatter + Monthly Deals -->
-    <div class="g2e" style="margin-bottom:16px;" id="scatterSection">
-      <div class="chart-card">
-        <div class="chart-head"><div class="card-ic ic-r"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="7.5" cy="16.5" r="1.5"/><circle cx="16.5" cy="7.5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19.5" cy="16.5" r="1.5"/><circle cx="4.5" cy="7.5" r="1.5"/></svg></div><span class="chart-title" id="scatterTitle">Discount vs Deal Value</span></div>
-        <div class="chart-body"><div style="height:240px;position:relative;"><canvas id="scatterChart"></canvas></div></div>
-      </div>
-      <div class="chart-card">
-        <div class="chart-head"><div class="card-ic ic-t"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><span class="chart-title">Monthly Deals Count</span></div>
-        <div class="chart-body"><div style="height:240px;position:relative;"><canvas id="monthlyDealsChart"></canvas></div></div>
-      </div>
-    </div>
-
   </div>
 </div>
 
@@ -517,7 +472,12 @@ function go(f){
   const lowerName=f.name.toLowerCase();
   if(!allowed.some(ext=>lowerName.endsWith(ext))){ferr.textContent="Please upload a CSV or Excel file (.csv, .xlsx, .xls).";ferr.classList.add("on");return;}
   document.getElementById("fname").textContent=f.name;
-  document.getElementById("fsize").textContent=(f.size/1024).toFixed(1)+" KB";
+  let fileSize = f.size || 0;
+  if(fileSize > 1024 * 1024) {
+    document.getElementById("fsize").textContent=(fileSize/(1024*1024)).toFixed(1)+" MB";
+  } else {
+    document.getElementById("fsize").textContent=Math.max(0.1, fileSize/1024).toFixed(1)+" KB";
+  }
   document.getElementById("fpill").classList.add("on");
   document.getElementById("atxt").textContent="";
   document.getElementById("atxt").classList.remove("ready");
@@ -561,8 +521,13 @@ document.getElementById("msgs").innerHTML = d.ai_enabled
   ? ""
   : '<div class="empty-chat">AI disabled. Add API key in backend to use Ask Anything.</div>';
 
- document.getElementById("sugrow").classList.toggle("on", !!d.ai_enabled);
-
+  const sugrow = document.getElementById("sugrow");
+  if (d.ai_enabled && d.chat_suggestions && d.chat_suggestions.length > 0) {
+      sugrow.innerHTML = d.chat_suggestions.map(s => `<button class="sg" onclick="usg(this)">${s}</button>`).join("");
+      sugrow.classList.add("on");
+  } else {
+      sugrow.classList.remove("on");
+  }
   charts=d.charts||{}; kpisData=d.kpis||{}; detData=d.detected||{};
   filterOptions=d.filter_options||{}; dateRange=d.date_range||{};
 
@@ -634,15 +599,22 @@ function buildKPIItems(k){
   const items=[];
   items.push({label:"Total Records", val: k.total_records?.toLocaleString()||"—", sub:"All rows"});
   if(k.total_value!==undefined) items.push({label:`Total ${k.value_col||"Value"}`, val: fmt(k.total_value), sub:`Avg: ${fmt(k.avg_value)}`});
+  else if(k.avg_value!==undefined) items.push({label:`Avg ${k.value_col||"Value"}`, val: fmt(k.avg_value), sub:`Max: ${fmt(k.max_value)}`});
+  
   if(k.win_rate!==undefined) items.push({label:"Win Rate", val: k.win_rate+"%", sub:`${k.won_count} won deals`});
+  if(k.top_category!==undefined) items.push({label:`Top ${k.cat_col}`, val: k.top_category, sub:`Count: ${fmt(k.top_count)}`});
+  
   if(k.avg_discount!==undefined) items.push({label:"Avg Discount", val: fmt(k.avg_discount), sub:`Total: ${fmt(k.total_discount)}`});
   if(k.avg_booking!==undefined) items.push({label:"Avg Booking", val: fmt(k.avg_booking), sub:"Booking amount"});
+  
   if(k.top_branch) items.push({label:"Top Branch", val: k.top_branch, sub:`by ${k.value_col||"value"}`});
   if(k.top_employee) items.push({label:"Top Employee", val: k.top_employee, sub:"highest revenue"});
+  
   if(k.branch_count) items.push({label:"Branches", val: k.branch_count, sub:"locations"});
   if(k.emp_count) items.push({label:"Employees", val: k.emp_count, sub:"sales staff"});
-  if(k.max_value!==undefined) items.push({label:`Max ${k.value_col||"Value"}`, val: fmt(k.max_value), sub:"highest deal"});
-  return items;
+  if(k.distinct_count) items.push({label:`Unique ${k.distinct_col}`, val: k.distinct_count, sub:"categories"});
+  
+  return items.slice(0, 6);
 }
 
 // ── CHART RENDERING ───────────────────────────────────────
@@ -665,48 +637,52 @@ function mkChart(id,type,labels,values,title,opts){
   chartInstances[id]=new Chart(ctx,cfg);
 }
 
-function renderAllCharts(ch){
-  // Branch
-  if(ch.branch_revenue){
-    document.getElementById("branchSection").style.display="grid";
-    document.getElementById("brRevTitle").textContent=ch.branch_revenue.title||"Revenue by Branch";
-    mkChart("brRevChart","bar",ch.branch_revenue.labels,ch.branch_revenue.values,ch.branch_revenue.title);
-  } else document.getElementById("branchSection").style.display="none";
-  if(ch.branch_deals){
-    mkChart("brDealChart","doughnut",ch.branch_deals.labels,ch.branch_deals.values,ch.branch_deals.title);
-    document.getElementById("brDealTitle").textContent=ch.branch_deals.title||"Deals by Branch";
+const ICONS = {
+    "ic-p": '<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
+    "ic-t": '<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0110 10"/></svg>',
+    "ic-k": '<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
+    "ic-y": '<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>',
+    "ic-a": '<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
+    "ic-g": '<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20m-10-10h20"/></svg>',
+    "ic-r": '<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="7.5" cy="16.5" r="1.5"/><circle cx="16.5" cy="7.5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19.5" cy="16.5" r="1.5"/><circle cx="4.5" cy="7.5" r="1.5"/></svg>'
+};
+
+function renderAllCharts(chartsData){
+  const grid = document.getElementById("dynamicChartsGrid");
+  if(!grid) return;
+  grid.innerHTML = "";
+  
+  // chartsData is now a list of dicts, instead of a dict of dicts
+  const chartsList = Array.isArray(chartsData) ? chartsData : Object.values(chartsData);
+  
+  if (chartsList.length === 0) {
+      grid.innerHTML = "<div style='grid-column: 1 / -1; text-align: center; color: var(--muted); padding: 30px;'>No charts could be generated for this dataset.</div>";
+      return;
   }
-  // Employee
-  if(ch.emp_revenue){
-    document.getElementById("empSection").style.display="grid";
-    document.getElementById("empRevTitle").textContent=ch.emp_revenue.title||"Revenue by Employee";
-    mkChart("empRevChart","bar",ch.emp_revenue.labels,ch.emp_revenue.values,ch.emp_revenue.title);
-  } else document.getElementById("empSection").style.display="none";
-  if(ch.emp_deals){
-    mkChart("empDealChart","bar",ch.emp_deals.labels,ch.emp_deals.values,ch.emp_deals.title);
-    document.getElementById("empDealTitle").textContent=ch.emp_deals.title||"Deals by Employee";
-  }
-  // Monthly trend
-  if(ch.monthly_revenue){
-    mkChart("trendChart","line",ch.monthly_revenue.labels,ch.monthly_revenue.values,"Revenue");
-  } else if(ch.generic){
-    mkChart("trendChart","bar",ch.generic.labels,ch.generic.values,ch.generic.title);
-  }
-  // Status pie
-  if(ch.status_pie){
-    mkChart("statusChart","doughnut",ch.status_pie.labels,ch.status_pie.values,"Status");
-  }
-  // Scatter
-  if(ch.scatter){
-    document.getElementById("scatterSection").style.display="grid";
-    document.getElementById("scatterTitle").textContent=ch.scatter.title;
-    const pts=ch.scatter.x.map((x,i)=>({x,y:ch.scatter.y[i]}));
-    mkChart("scatterChart","scatter",null,pts,ch.scatter.title);
-  } else document.getElementById("scatterSection").style.display="none";
-  // Monthly deals
-  if(ch.monthly_deals){
-    mkChart("monthlyDealsChart","bar",ch.monthly_deals.labels,ch.monthly_deals.values,"Deals");
-  }
+
+  chartsList.forEach(ch => {
+      const card = document.createElement("div");
+      card.className = "chart-card";
+      
+      const iconKey = ch.icon || "ic-p";
+      const iconSvg = ICONS[iconKey] || ICONS["ic-p"];
+      
+      card.innerHTML = `
+        <div class="chart-head"><div class="card-ic ${iconKey}">${iconSvg}</div><span class="chart-title">${ch.title}</span></div>
+        <div class="chart-body"><div style="height:240px;position:relative;"><canvas id="canvas_${ch.id}"></canvas></div></div>
+      `;
+      grid.appendChild(card);
+      
+      // Delay Chart.js Init slightly to ensure canvas is painted
+      setTimeout(() => {
+          if (ch.type === "scatter") {
+              const pts = ch.values.map((v, i) => ({x: v.x || ch.x[i], y: v.y || ch.y[i]}));
+              mkChart(`canvas_${ch.id}`, "scatter", null, pts, ch.title);
+          } else {
+              mkChart(`canvas_${ch.id}`, ch.type, ch.labels, ch.values, ch.title);
+          }
+      }, 50);
+  });
 }
 
 // ── COL STATS ─────────────────────────────────────────────
